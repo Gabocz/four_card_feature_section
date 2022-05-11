@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);    
+    --veryDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    margin: 30px;
+    background-color: var(--veryLightGray);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.lead {
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.lead div {
+    max-width: 400px;
+    text-align: center;
+}
+
+#karma {
+    grid-column: 2/3;
+    border-top: 4px solid var(--orange);
+}
+
+#builder {
+    grid-column: 2/3;
+    border-top: 4px solid var(--red);
+}
+
+#calculator {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    border-top: 4px solid var(--blue);
+    transform: translateY(50%);
+}
+
+#supervisor {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    border-top: 4px solid var(--cyan);
+    transform: translateY(50%);
+}
+
+#parAboveTitle {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+#parBelowTitle {
+    font-size: 13px;
+    color: var(--grayishBlue);
+    margin-top: 18px;
+}
+
+.card {
+    height: 250px;
+    padding: 30px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow:  3px 10px 25px lightgrey;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.title {
+    margin-bottom: 12px;
+}
+
+.description {
+    color: var(--grayishBlue);
+    font-size: 14px;
+    margin-bottom: 35px;
+}
+.iconContainer {
+    align-self: flex-end;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
+
+
+
+@media (max-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr;
+    } 
+   
+    .lead {
+        grid-column: 1/1;
+        grid-row: 1/1;
+    }
+
+    .card {
+        max-width: 500px;
+    }
+
+      #supervisor {
+        transform: translateY(0);
+        grid-row: 2/3;
+    }
+
+    #builder {
+        grid-row: 3/4;
+        grid-column: 1/1;
+    }
+
+    #karma {
+        grid-row: 4/5;
+        grid-column: 1/1;
+    }
+
+    #calculator {
+        transform: translateY(0);
+        grid-column: 1/1;
+        grid-row: 5/6;
+    }
+
+    .footer {
+        position: relative;
+        right: 0;
+    }
+
+}
+
+@media (max-width: 500px) {
+    #parAboveTitle {
+        font-size: 23px;
+    }
+
+    .lead h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        height: 230px;
+        padding: 25px;
+    }
+
+    .description {
+        margin-bottom: 25px;
+    }
+}
